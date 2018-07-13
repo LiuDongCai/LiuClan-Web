@@ -3,7 +3,6 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
-
     <servlet>
         <!-- servlet的名称 -->
         <servlet-name>springmvc</servlet-name>
@@ -20,11 +19,12 @@
         <!-- 在web启动时立即加载servlet -->
         <load-on-startup>1</load-on-startup>
     </servlet>
+
     <servlet-mapping>
         <!-- 请求对应的Serclet的名称 -->
         <servlet-name>springmvc</servlet-name>
         <!-- 监听当前域的所有请求 -->
-        <url-pattern></url-pattern>
+        <url-pattern>/</url-pattern>
     </servlet-mapping>
 
 </web-app>
