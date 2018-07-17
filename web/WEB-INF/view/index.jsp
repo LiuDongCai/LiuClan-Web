@@ -4,10 +4,12 @@
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>欢迎页面</title>
+  <title>测试@Controller注解</title>
 </head>
 <body>
 <!-- 页面可以访问Controller传递传递出来的message -->
-${requestScope.message}
+信息是：${requestScope.message}
+用户名是：${requestScope.user.username}
+密码是：${requestScope.user.password}
 </body>
 </html>

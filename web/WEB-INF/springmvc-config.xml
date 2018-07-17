@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
        xmlns:mvc="http://www.springframework.org/schema/mvc"
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="
@@ -15,13 +16,14 @@
     	如果扫描到有Spring的相关注解的类，则把这些类注册为Spring的bean -->
     <context:component-scan base-package="controller"/>
 
-    <!-- 配置处理映射器 -->
-    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"/>
+    <!-- 默认装配方案 -->
+    <mvc:annotation-driven/>
+    <!-- 静态资源处理 -->
+    <mvc:default-servlet-handler/>
 
-    <!-- 配置处理器适配器-->
-    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"/>
-
-    <!-- 视图解析器 -->
-    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"/>
+    <!-- 视图解析器  p:prefix属性表示前缀  p:suffix 表示后缀  -->
+    <bean id="viewResolver"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+          p:prefix="/WEB-INF/view/" p:suffix=".jsp"/>
 
 </beans>
